@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 export default function Sidebar() {
     return (
@@ -7,3 +8,10 @@ export default function Sidebar() {
         </div>
     )
 }
+
+
+
+const SidebarContainer= styled.div`
+
+`;
+

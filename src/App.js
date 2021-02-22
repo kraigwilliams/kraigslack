@@ -3,6 +3,7 @@ import Header from './components/Header'
 import { Counter } from './features/counter/Counter';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import styled from 'styled-components'
+import Sidebar from './components/Sidebar'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <>
        <Header/>
 <AppBody>
+  <Sidebar/>
   <Switch>
     <Route exact path='/'>
       {/* Chat */}
