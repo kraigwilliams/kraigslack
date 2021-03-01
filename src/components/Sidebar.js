@@ -21,8 +21,9 @@ export default function Sidebar() {
         <SidebarContainer>
             <SidebarHeader>
                 <SidebarInfo>
-                    <h2>Kraig Williams Enterprises</h2>
-                  <h3>  <FiberManualRecordIcon/></h3>
+                    <h2>SLACK</h2>
+                  <h3>  <FiberManualRecordIcon/> Kraig Williams</h3>
+                
                     </SidebarInfo>
                     <CreateIcon/>
                 </SidebarHeader>
@@ -47,10 +48,11 @@ export default function Sidebar() {
 
 const SidebarContainer= styled.div`
 display:flex;
+flex-direction:column;
 flex:0.3;
 color:white;
 background: var(--slack-color);
-margin-top:60px;
+margin-top:40px;
 max-width:260px;
 border-top:1px solid #49274b;
 `;
@@ -72,8 +74,18 @@ padding:13px;
 `;
 
 const SidebarInfo= styled.div`
+
 color:white;
 flex:1;
+
+>h3 >.MuiSvgIcon-root{
+ color:green;   
+ font-size:14px;
+ margin-top:1px;
+ margin-right:2px;
+
+}
+
 
 >h2{
     font-size:15px;
@@ -84,7 +96,8 @@ flex:1;
 >h3{
     display:flex;
     font-size:13px;
-    font-weight:
+    font-weight: 400;
+    align-items:center;
 }
 `;
 
