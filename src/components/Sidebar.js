@@ -39,7 +39,7 @@ export default function Sidebar() {
          <hr/>
          <SidebarOption Icon={ExpandMoreIcon} title='Show more'/>
         <hr/>
-        <SidebarOption Icon={AddIcon} title=''/>
+        <SidebarOption Icon={AddIcon} title='Add Channel'/>
             </SidebarContainer>
     )
 }
