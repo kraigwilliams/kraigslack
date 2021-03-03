@@ -46,12 +46,14 @@ export default function Sidebar() {
          <SidebarOption Icon={ExpandLessIcon} title='Show less'/>
          <hr/>
          <SidebarOption Icon={ExpandMoreIcon} title='Show more'/>
+         
         <hr/>
+        <SidebarOption Icon={AddIcon} title='Add Channel' addChannelOption/>
         {channels?.docs.map(doc=>(
             <SidebarOption 
             key={doc.id}  
             id= {doc.id}
-            Icon={AddIcon} title={doc.data().name} addChannelOption>
+            Icon={AddIcon} title={doc.data().name} >
                 </SidebarOption>
 
             
