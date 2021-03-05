@@ -44,16 +44,18 @@ export default function Sidebar() {
          <SidebarOption Icon={AppsIcon} title='Apps'/>
          <SidebarOption Icon={FileCopyIcon} title='File browser'/>
          <SidebarOption Icon={ExpandLessIcon} title='Show less'/>
-         <hr/>
+         {/* <hr /> */}
+         {/* <HorzLine/> */}
          <SidebarOption Icon={ExpandMoreIcon} title='Show more'/>
          
-        <hr/>
+         {/* <HorzLine/> */}
         <SidebarOption Icon={AddIcon} title='Add Channel' addChannelOption/>
+        
         {channels?.docs.map(doc=>(
             <SidebarOption 
             key={doc.id}  
             id= {doc.id}
-            Icon={AddIcon} title={doc.data().name} >
+             title={doc.data().name} >
                 </SidebarOption>
 
             
@@ -66,6 +68,7 @@ export default function Sidebar() {
 
 
 const SidebarContainer= styled.div`
+height:100%;
 display:flex;
 flex-direction:column;
 flex:0.3;
@@ -121,3 +124,8 @@ flex:1;
 `;
 
 
+// const HorzLine=styled.hr`
+// width:255px;
+// color:#696969;
+
+// `;
