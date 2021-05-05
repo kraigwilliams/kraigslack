@@ -1,20 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Button} from '@material-ui/core'
+import {db} from '../firebase'
+import firebase from 'firebase'
 
+function ChatInput({channelName, channelId, chatRef}) {
 
-
-function ChatInput({channelName, channelId}) {
+const [input, setInput] =useState('')
 
 const sendMessage = e =>{
     e.preventDefault()
+
+if(!channelId){
+    return false;
+}
+
+db.collection('rooms').doc(channelId).collection('messages').add({
+    message:input,
+    timestamp:firebase.firestore.FieldValue.serverTimestamp(),
+    user: 'Kraig Williams',
+    userImage: 'https://media-exp1.licdn.com/dms/image/C4D03AQG1NQJdxSEpdw/profile-displayphoto-shrink_800_800/0/1587342655939?e=1620259200&v=beta&t=EoaEtFbjOJK4QgBwnfsGiUWJPdhpt08_PQxkEL19JCQ'
+})
+
+
+chatRef.current?.scrollIntoView({
+   behavior:'smooth'
+})
+setInput('')
 }
 
 
     return (
         <ChatInputContainer>
 <form >
-<input placeholder={`Message #Room`}/>
+<input onChange={(e)=>setInput(e.target.value)}
+ value={input} 
+ placeholder={`Message #Room`}/>
 <Button hidden type='submit' onClick={sendMessage}>
     SEND
     </Button>
@@ -43,6 +64,10 @@ border-radius:20px;
     border-radius:3px;
     padding:20px;
     outline:none;
+}
+
+> form > button{
+    display:none !important;
 }
 
 `;

@@ -24,7 +24,7 @@ import {db} from '../firebase'
 
 export default function Sidebar() {
 
-    const [channels, loading, error]= useCollection(db.collection('rooms'))       
+    const [channels, loading, error]= useCollection(db.collection("rooms"))       
     return (
         <SidebarContainer>
             <SidebarHeader>
@@ -49,9 +49,9 @@ export default function Sidebar() {
          <SidebarOption Icon={ExpandMoreIcon} title='Show more'/>
          
          {/* <HorzLine/> */}
-        <SidebarOption Icon={AddIcon} title='Add Channel' addChannelOption/>
+        <SidebarOption Icon={AddIcon} title='Add Channel boss man' addChannelOption/>
         
-        {channels?.docs.map(doc=>(
+        {channels?.docs.map((doc)=>(
             <SidebarOption 
             key={doc.id}  
             id= {doc.id}
