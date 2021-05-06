@@ -49,7 +49,7 @@ export default function Sidebar() {
          <SidebarOption Icon={ExpandMoreIcon} title='Show more'/>
          
          {/* <HorzLine/> */}
-        <SidebarOption Icon={AddIcon} title='Add Channel boss man' addChannelOption/>
+        <SidebarOption Icon={AddIcon} title='Add Channel' addChannelOption/>
         
         {channels?.docs.map((doc)=>(
             <SidebarOption 
@@ -68,7 +68,8 @@ export default function Sidebar() {
 
 
 const SidebarContainer= styled.div`
-height:100%;
+height:fit-content;
+ min-height:100vh;
 display:flex;
 flex-direction:column;
 flex:0.3;
@@ -77,6 +78,8 @@ background: var(--slack-color);
 margin-top:40px;
 max-width:260px;
 border-top:1px solid #49274b;
+
+
 `;
 
 const SidebarHeader= styled.div`

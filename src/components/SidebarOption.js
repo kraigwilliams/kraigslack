@@ -16,7 +16,7 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
         name: channelName
       });
     }
-    console.log('the db',channelName,db.collection('rooms'))
+    
   };
 
   const selectChannel = () => {
@@ -54,6 +54,9 @@ const SidebarOptionContainer = styled.div`
   align-items: center;
   padding-left: 2px;
   cursor: pointer;
+  
+  
+  
 
   :hover {
     opacity: 0.9;
